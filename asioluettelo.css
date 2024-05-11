@@ -10,9 +10,9 @@ body {
   .navigations {
   }
   .header {
-    padding: 14px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
