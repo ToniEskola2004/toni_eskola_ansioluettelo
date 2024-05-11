@@ -7,7 +7,7 @@ body {
     margin-left: 5%;
     font-size: 19px;
   }
-  .navigations {
+  .navigation {
   }
   .header {
     display: flex;
@@ -21,7 +21,7 @@ body {
     background-color: #333;
   }
   
-  .navigations a {
+  .navigation a {
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
