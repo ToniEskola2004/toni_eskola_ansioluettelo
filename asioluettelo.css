@@ -4,7 +4,6 @@ body {
   }
   .navLogo {
     color: white;
-    float: left;
     margin-left: 5%;
     font-size: 19px;
   }
@@ -12,15 +11,15 @@ body {
     display: flex;
     justify-content: space-around;
   }
-  .topnav {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     overflow: hidden;
     background-color: #333;
   }
   
-  .topnav a {
-    position: absolute;
-    top: 0px;
-    right: 5%;
+  .header a {
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -28,12 +27,12 @@ body {
     font-size: 17px;
   }
   
-  .topnav a:hover {
+  .header a:hover {
     background-color: #ddd;
     color: black;
   }
   
-  .topnav a.active {
+  .header a.active {
     background-color: #525252;
     color: white;
   }
