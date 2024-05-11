@@ -2,14 +2,12 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .navLogo {
+  .logo {
     color: white;
     margin-left: 5%;
     font-size: 19px;
   }
   .navigations {
-    display: flex;
-    justify-content: space-around;
   }
   .header {
     display: flex;
