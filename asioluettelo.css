@@ -10,7 +10,7 @@ body {
   }
   .navigations {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
   .topnav {
     overflow: hidden;
