@@ -8,10 +8,11 @@ body {
     margin-left: 5%;
     font-size: 19px;
   }
-  
-  .topnav {
+  .navigations {
     display: flex;
     flex-direction: row-reverse;
+  }
+  .topnav {
     overflow: hidden;
     background-color: #333;
   }
