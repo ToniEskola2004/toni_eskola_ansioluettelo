@@ -8,6 +8,7 @@ body {
     font-size: 19px;
   }
   .navigations {
+    padding: 14px;
   }
   .header {
     display: flex;
