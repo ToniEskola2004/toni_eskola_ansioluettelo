@@ -9,8 +9,7 @@ body {
     font-size: 19px;
   }
   .navigations {
-    display: flex;
-    flex-direction: row;
+    float: left;
   }
   .topnav {
     overflow: hidden;
