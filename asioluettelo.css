@@ -8,11 +8,12 @@ body {
     font-size: 19px;
   }
   .navigation {
+    text-decoration: none;
   }
   .header {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    /*align-items: center;*/
     position: fixed;
     top: 0;
     left: 0;
