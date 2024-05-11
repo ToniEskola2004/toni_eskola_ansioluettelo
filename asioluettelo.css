@@ -10,6 +10,8 @@ body {
   }
   
   .topnav {
+    display: flex;
+    flex-direction: row-reverse;
     overflow: hidden;
     background-color: #333;
   }
