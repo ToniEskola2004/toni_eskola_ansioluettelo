@@ -1,27 +1,27 @@
 const laatikot1 = [
     {
-        id: 1,
-        projekti: "Noppapeli",
+        id: "projekti1",
+        projekti: "1Noppapeli",
         tietoa: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga enim. Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium reiciendis quis."
     },
     {
-        id: 2,
-        projekti: "Ristinolla",
+        id: "projekti2",
+        projekti: "2Ristinolla",
         tietoa: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga enim. Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium reiciendis quis."
     },
     {
-        id: 3,
-        projekti: "Labyrinttipeli",        
+        id: "projekti3",
+        projekti: "3Labyrinttipeli",        
         tietoa: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga enim. Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium reiciendis quis."
     },
     {
-        id: 4,
-        projekti: "Kiinalaiselle ravintolalle nettisivut",
+        id: "projekti4",
+        projekti: "4Kiinalaiselle ravintolalle nettisivut",
         tietoa: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga enim. Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium reiciendis quis."
     },
     {
-        id: 5,
-        projekti: "Suomalaiselle sisustus yrittäjälle nettisivut",
+        id: "projekti5",
+        projekti: "5Suomalaiselle sisustus yrittäjälle nettisivut",
         tietoa: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga enim. Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium reiciendis quis."
     }
 ];
@@ -34,8 +34,8 @@ const postMethods1 = ()=>{
         postElement1.id = postData.id;
         postElement1.classList.add('projektit');
         postElement1.innerHTML = `
-        <h3 class="kortti-otsikko">${postData.projekti}</h3>
-        <p class="kortti-teksti">${postData.tietoa}</p>`
+        <h3 class="projekti-otsikko">${postData.projekti}</h3>
+        <p class="projekti-teksti">${postData.tietoa}</p>`
 
         postContainer1.appendChild(postElement1);
     });
