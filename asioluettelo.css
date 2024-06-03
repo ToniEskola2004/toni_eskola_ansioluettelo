@@ -28,6 +28,7 @@ body {
   width: 100%;
   overflow: hidden;
   background-color: hsl(0, 0%, 18%);
+  z-index: 1000;
 }
 
 .navigation {
@@ -51,8 +52,8 @@ body {
 
 .navigation a.contact {
   padding: 12px 16px;
-  border-radius: 25px;
-  background-color: #525252;
+  border-radius: 42px;
+  background-color: hsl(0, 0%, 30%);
   color: white;
 }
 
@@ -67,7 +68,7 @@ body {
 }
 
 .profiili {
-  background-color: rgba(0, 255, 255, 0.233);
+  background-color: rgba(0, 425, 425, 0.233);
   padding-left: 15vmin;
   width: 55%;
   float: left;
@@ -197,14 +198,17 @@ body {
   min-height: 800px;
   background-color: hsl(212, 14%, 21%);
   color: whitesmoke;
+  padding: 4rem 0;
 }
-.tadotjakiinnostus h2, .tadotjakiinnostus h4{
+
+.tadotjakiinnostus h2,
+.tadotjakiinnostus h4 {
   text-align: center;
 }
 
 .tadotjakiinnostus-taidot {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 60px 1fr 60px 1fr;
   height: 80%;
   width: 80%;
 }
@@ -214,7 +218,8 @@ body {
   justify-content: space-around;
 }
 
-.tadotjakiinnostus-it-taidot, .tadotjakiinnostus-kielet {
+.tadotjakiinnostus-it-taidot,
+.tadotjakiinnostus-kielet {
   display: flex;
   flex-direction: column;
   row-gap: 14px;
@@ -225,10 +230,13 @@ body {
   position: relative;
   min-width: 500px;
   width: 100%;
+  z-index: 1;
 }
-.skill-container .skill-box{
+
+.skill-container .skill-box {
   width: 100%;
 }
+
 .skill-box .title {
   display: block;
   font-size: 1.2rem;
@@ -240,7 +248,7 @@ body {
   width: 100%;
   border-radius: 6px;
   margin-top: 6px;
-  background-color: hsl(212, 14%, 5%);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .skill-bar .skill-per {
@@ -250,39 +258,53 @@ body {
   width: 95%;
   border-radius: 6px;
   background-color: hsl(212, 14%, 50%);
-  animation: progress 0.4s ease-in-out forwards;
-  opacity: 0;
+
 }
-.skill-per.englanti {
-  width: 61%;
-  animation-delay: 0.1s;
-}
-.skill-per.ruotsi {
-  width: 12%;
-  animation-delay: 0.2s;
-}
-.skill-per.word {
-  width: 39%;
-  animation-delay: 0.3s;
-}
-.skill-per.excel {
-  width: 23%;
-  animation-delay: 0.4s;
-}
-.skill-per.wordpress {
-  width: 42%;
-  animation-delay: 0.5s;
-}
+
 @keyframes progress {
-  0%{
-      width: 0;
-      opacity: 1;
+  0% {
+    width: 0;
+    opacity: 1;
   }
-  100%{
-      opacity: 1;
+
+  100% {
+    opacity: 1;
   }
 }
-.skill-per .tooltip{
+
+.kielet-ja-it-taidot-container.in-view {
+  .skill-bar .skill-per {
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+  }
+
+  .skill-per.englanti {
+    width: 61%;
+    animation-delay: 0.1s;
+  }
+
+  .skill-per.ruotsi {
+    width: 12%;
+    animation-delay: 0.2s;
+  }
+
+  .skill-per.word {
+    width: 39%;
+    animation-delay: 0.3s;
+  }
+
+  .skill-per.excel {
+    width: 23%;
+    animation-delay: 0.4s;
+  }
+
+  .skill-per.wordpress {
+    width: 38%;
+    animation-delay: 0.5s;
+  }
+}
+
+.skill-per .tooltip {
   position: absolute;
   right: -14px;
   top: -28px;
@@ -294,7 +316,8 @@ body {
   background: hsl(212, 14%, 50%);
   z-index: 1;
 }
-.tooltip::before{
+
+.tooltip::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -306,8 +329,115 @@ body {
   transform: translateX(-50%) rotate(45deg);
 }
 
+/*tadotjakiinnostus-progressbar-circle*/
+
+.skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  z-index: 1;
+}
+
+.outer {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: hsl(212, 14%, 21%);
+}
+
+#number {
+  font-weight: 600;
+}
+
+circle {
+  fill: none;
+  stroke: hsl(212, 14%, 50%);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="38"] circle {
+  animation: anim38 .7s ease-in-out forwards;
+  animation-delay: 0.1s;
+  }
+}
+
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="42"] circle {
+  animation: anim42 .7s ease-in-out forwards;
+  animation-delay: 0.3s;
+  }
+}
+
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="46"] circle {
+  animation: anim46 .7s ease-in-out forwards;
+  animation-delay: 0.5s;
+  }
+}
+
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="22"] circle {
+  animation: anim22 .7s ease-in-out forwards;
+  animation-delay: 0.7s;
+  }
+}
+
+@keyframes anim38 {
+  to {
+    stroke-dashoffset: 292;
+  }
+}
+
+@keyframes anim42 {
+  to {
+    stroke-dashoffset: 273;
+  }
+}
+
+@keyframes anim46 {
+  to {
+    stroke-dashoffset: 264;
+  }
+}
+
+@keyframes anim22 {
+  to {
+    stroke-dashoffset: 368;
+  }
+}
+
+svg {
+  position: absolute;
+}
+
+.tadotjakiinnostus-ohjelmoitikielet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
 
 /*harrastukset*/
+
 .harrastukset h4 {
   text-align: center;
   font-size: 1.5rem;
@@ -320,7 +450,7 @@ body {
   width: 80%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 2rem;
 }
 
@@ -329,7 +459,7 @@ body {
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 0 .4rem .4rem rgba(0, 0, 0, 0.171);
-  transition: .25s ease-in;
+  transition: .42s ease-in;
 }
 
 .kortti:hover {
