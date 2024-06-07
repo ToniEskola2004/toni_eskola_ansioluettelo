@@ -39,8 +39,8 @@ const laatikot = [
 
 const postContainer = document.querySelector('.laatikot-container');
 
-const postMethods = ()=>{
-    laatikot.forEach((postData)=>{
+const postMethods = () => {
+    laatikot.forEach((postData) => {
         const postElement = document.createElement('div');
         postElement.classList.add('kortti');
         postElement.innerHTML = `

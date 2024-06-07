@@ -11,12 +11,9 @@ function initializeProgressBar(skillElement) {
       requestAnimationFrame(updateCounter);
     }
   }
-
-  // Start the counter update
   requestAnimationFrame(updateCounter);
 }
 
-// Initialize all skill elements
 document.querySelectorAll('.skill').forEach(skillElement => {
   initializeProgressBar(skillElement);
 });

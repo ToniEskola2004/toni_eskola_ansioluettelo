@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="kuvat/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>toni_eskola_anisioluettelo</title>
     <link rel="styleSheet" href="asioluettelo.css">
     <header class="header">
@@ -15,10 +18,25 @@
             <a href="#news">Työkokemus</a>
             <a href="#contact">Portfolio</a>
             <a href="#about">Tutkinnot</a>
-            <a href="#news">Taidot ja kiinnostuksenkohteet</a>
-            <a href="#contact">Harrastukset</a>
+            <a class="taidot-ja-kiinnostukset" href="#news">Taidot ja kiinnostuksenkohteet</a>
+            <a class="Harrastukset" href="#contact">Harrastukset</a>
             <a class="contact" href="#about">Yhteystiedot</a>
         </nav>
+        <div class="hampurilais-valikko">
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+            <ul class="sidebar" style="display: flex;">
+                <li onclick="hideSidebar()"><a href="#"><i style="cursor: pointer;" class="fa-solid fa-xmark"></i></a>
+                </li>
+                <li><a href="#home">Profiili</a></li>
+                <li><a href="#news">Työkokemus</a></li>
+                <li><a href="#contact">Portfolio</a></li>
+                <li><a href="#about">Tutkinnot</a></li>
+                <li><a href="#news">Taidot ja kiinnostuksenkohteet</a></li>
+                <li><a href="#contact">Harrastukset</a></li>
+                <li><a class="contact" href="#about">Yhteystiedot</a></li>
+            </ul>
+
+        </div>
     </header>
 </head>
 
@@ -37,52 +55,61 @@
         </div>
     </div>
 
-    <div class="työkokemus">
-        <h2>Työkokemus</h2>
-        <ul>
-            <li>
-                <h4>Paikka</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
-                    enim.
-                    Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium
-                    reiciendis quis.</p>
-            </li>
-            <li>
-                <h4>Paikka</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
-                    enim.
-                    Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium
-                    reiciendis quis.</p>
-            </li>
-            <li>
-                <h4>Paikka</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
-                    enim.
-                    Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium
-                    reiciendis quis.</p>
-            </li>
-            <li>
-                <h4>Paikka</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
-                    enim.
-                    Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium
-                    reiciendis quis.</p>
-            </li>
-            <li>
-                <h4>Paikka</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
-                    enim.
-                    Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga accusantium
-                    reiciendis quis.</p>
-            </li>
-        </ul>
-    </div>
-    <section class="portfolio-section">
-        <div class="portfolio-container">
-            <h2 style="text-align: center;">Portfolio</h2>
-            <div class="portfolio-työt"></div>
+    <div class="työkokemus-portfolio-container">
+        <div class="työkokemus">
+            <h2 style="text-align: center;">Työkokemus</h2>
+            <div class="työkokemus-lista-container">
+                <div class="työkokemus-lista">
+                    <h4>Paikka</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
+                        enim.
+                        Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga
+                        accusantium
+                        reiciendis quis.</p>
+                </div>
+                <div class="työkokemus-lista">
+                    <h4>Paikka</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
+                        enim.
+                        Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga
+                        accusantium
+                        reiciendis quis.</p>
+                </div>
+                <div class="työkokemus-lista">
+                    <h4>Paikka</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
+                        enim.
+                        Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga
+                        accusantium
+                        reiciendis quis.</p>
+                </div>
+                <div class="työkokemus-lista">
+                    <h4>Paikka</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
+                        enim.
+                        Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga
+                        accusantium
+                        reiciendis quis.</p>
+                </div>
+                <div class="työkokemus-lista">
+                    <h4>Paikka</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatum impedit incidunt fuga
+                        enim.
+                        Quia eum labore debitis incidunt! Veniam commodi officia eos doloribus optio velit fuga
+                        accusantium
+                        reiciendis quis.</p>
+                </div>
+            </div>
         </div>
-    </section>
+        <section class="portfolio-section">
+            <div class="portfolio-container">
+                <h2 style="text-align: center;">Portfolio</h2>
+                <div class="portfolio-työt"></div>
+            </div>
+        </section>
+    </div>
+
+
     <div class="tutkinnot-container">
         <div class="tutkinnot-container-otsikko">
             <h2>Tutkinnot</h2>
@@ -250,6 +277,7 @@
         <div class="laatikot-container">
         </div>
     </div>
+    <script src="js/sidebar.js"></script>
     <script src="js/progressbar-counter.js"></script>
     <script src="js/animate.js"></script>
     <script src="js/kiinnostuksen-kohteet.js"></script>

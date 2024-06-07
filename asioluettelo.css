@@ -1,16 +1,19 @@
+/* väripaletti */
+/* #3d5a80 // #98c1d9 // #e0fbfc // #ee6c4d //#293241 */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #e0fbfc;
 }
 
 /* HEADERI */
 
 .logo {
-  color: hsl(0, 0%, 83%);
-  margin-left: 5%;
+  color: hsl(0, 0%, 57%);
   font-size: 19px;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .navigation {
@@ -20,6 +23,7 @@ body {
 .header {
   height: 55px;
   display: flex;
+  justify-content: center;
   justify-content: space-around;
   align-items: center;
   position: fixed;
@@ -27,52 +31,137 @@ body {
   left: 0;
   width: 100%;
   overflow: hidden;
-  background-color: hsl(0, 0%, 18%);
-  z-index: 1000;
+  background-color: hsla(0, 0%, 18%, 0);
+  z-index: 999;
 }
 
 .navigation {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 55%;
   margin: 0;
 }
 
 .navigation a {
-  padding: 14px 16px;
   transition: .15s ease-in;
   color: hsl(0, 0%, 57%);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.8rem; 
 }
 
 .navigation a:hover {
-  color: rgb(226, 226, 226);
+  color: #98c1d9;
 }
 
 .navigation a.contact {
   padding: 12px 16px;
   border-radius: 42px;
-  background-color: hsl(0, 0%, 30%);
-  color: white;
+  background-color: #293241;
+  color: #e0fbfc;
 }
 
 .navigation a.contact:hover {
   background-color: #ffffff00;
+  color: hsl(0, 0%, 57%);
+}
+
+/*mobiilimenu*/
+
+.skill-container {
+  display: none;
+}
+.hampurilais-valikko {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.hampurilais-valikko ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hampurilais-valikko li{
+  height: 50px;
+  color: #293241;
+}
+.hampurilais-valikko a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.sidebar a:hover{
+  background-color: #2c2c2c1c;
+}
+.hampurilais-valikko li:first-child{
+  margin-right: auto;
+}
+
+.sidebar{
+  margin-top: 0;
+  position: fixed;
+  top: 0; 
+  right: -107%;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: all ease-in-out 1s;
+}
+
+.sidebar li{
+  width: 100%;
+}
+.sidebar a{
+  width: 100%;
+}
+.menu-button{
+  display: none;
+}
+@media(max-width: 1010px){
+  .navigation {
+    display: none;
+  }
+  .menu-button{
+    display: block;
+  }
+  .header {
+    position: absolute;
+    justify-content: space-between;
+  }
+  .logo {
+    margin-left: 6%;
+  }
+}
+@media(max-width: 400px){
+  .sidebar{
+    width: 100%;
+  }
 }
 
 /*Profiili*/
 
 .profiili-container {
   margin-top: 140px;
+  clear: both;
 }
 
 .profiili {
-  background-color: rgba(0, 425, 425, 0.233);
-  padding-left: 15vmin;
+  background-color: #3d5a80;
+  padding-left: 14%;
+  padding-right: 25px;
   width: 55%;
   float: left;
   font-size: 1.3rem;
+  color: #e0fbfc;
+  padding-bottom: 15px;
 }
 
 *h2 {
@@ -82,33 +171,74 @@ body {
 /*Työkokemus*/
 
 .työkokemus {
-  margin-top: 160px;
+  font-size: 1.2rem;
+  color: #e0fbfc;
+  background-color: #ee6c4d;
+}
+.työkokemus h2 {
+  margin-top: 40px;
+  font-size: 2.5rem;
+}
+.työkokemus ul{
+  padding: 0;
+}
+
+.työkokemus-portfolio-container {
   clear: left;
+  display: grid;
+  grid-template-columns: 1fr 60%;
+  height: 1300px;
+}
+
+.työkokemus-lista {
+  padding: 25px 30px;
+  padding-left: 45px;
+  border-bottom: #e0fbfc solid 5px;
+}
+
+.työkokemus-lista:first-child{
+  padding-top: 10px;
+}
+
+.työkokemus-lista-container {
+  height: 90%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 1600px) {
+  .työkokemus-portfolio-container {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
 }
 
 /*porfolio*/
 
 .portfolio-section {
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 2200px;
-  background-color: rgb(47, 54, 62);
-  color: whitesmoke;
+  /* min-height: 1300px; */
+  background-color: #293241;
+  color: #e0fbfc;
 }
 
 .portfolio-container {
   width: 80%;
   height: 100%;
+  margin-bottom: 40px;
 }
 
 .portfolio-container h2 {
+  padding-top: 30px;
   margin-top: 40px;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .projektit {
-  border: whitesmoke solid 6px;
+  border: #e0fbfc solid 6px;
   border-radius: 45px;
   height: 100%;
   width: 100%;
@@ -116,17 +246,17 @@ body {
 }
 
 .projekti-otsikko {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .projekti-teksti {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .portfolio-työt {
   display: grid;
-  grid-template-columns: repeat(20, 2fr);
-  grid-template-rows: repeat(20, 96px);
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 48px);
 }
 
 #projekti1 {
@@ -146,7 +276,7 @@ body {
 }
 
 #projekti4 {
-  grid-column: 8 / 20;
+  grid-column: 9 / 20;
   grid-row: 9 / 14;
 }
 
@@ -160,13 +290,14 @@ body {
 }
 
 /*tutkinnot*/
+
 .tutkinnot-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 500px;
   margin: 8% 7%;
   font-size: 1.5rem;
-  color: #333;
+  color: #293241;
 }
 
 .tutkinnot-container-otsikko,
@@ -196,8 +327,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 800px;
-  background-color: hsl(212, 14%, 21%);
-  color: whitesmoke;
+  background-color: #293241;
+  color: #e0fbfc;
   padding: 4rem 0;
 }
 
@@ -257,7 +388,7 @@ body {
   height: 100%;
   width: 95%;
   border-radius: 6px;
-  background-color: hsl(212, 14%, 50%);
+  background-color: #ee6c4d;
 
 }
 
@@ -310,10 +441,10 @@ body {
   top: -28px;
   font-size: 12px;
   font-weight: 500;
-  color: #fff;
+  color: #e0fbfc;
   padding: 2px 6px;
   border-radius: 3px;
-  background: hsl(212, 14%, 50%);
+  background: #ee6c4d;
   z-index: 1;
 }
 
@@ -325,7 +456,7 @@ body {
   height: 10px;
   width: 10px;
   z-index: -1;
-  background-color: hsl(212, 14%, 50%);
+  background-color: #ee6c4d;
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -357,7 +488,7 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: hsl(212, 14%, 21%);
+  background: #293241;
 }
 
 #number {
@@ -366,7 +497,7 @@ body {
 
 circle {
   fill: none;
-  stroke: hsl(212, 14%, 50%);
+  stroke: #ee6c4d;
   stroke-width: 20px;
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
@@ -375,29 +506,29 @@ circle {
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
   .skill[data-target="38"] circle {
-  animation: anim38 .7s ease-in-out forwards;
-  animation-delay: 0.1s;
+    animation: anim38 .7s ease-in-out forwards;
+    animation-delay: 0.1s;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
   .skill[data-target="42"] circle {
-  animation: anim42 .7s ease-in-out forwards;
-  animation-delay: 0.3s;
+    animation: anim42 .7s ease-in-out forwards;
+    animation-delay: 0.3s;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
   .skill[data-target="46"] circle {
-  animation: anim46 .7s ease-in-out forwards;
-  animation-delay: 0.5s;
+    animation: anim46 .7s ease-in-out forwards;
+    animation-delay: 0.5s;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
   .skill[data-target="22"] circle {
-  animation: anim22 .7s ease-in-out forwards;
-  animation-delay: 0.7s;
+    animation: anim22 .7s ease-in-out forwards;
+    animation-delay: 0.7s;
   }
 }
 
@@ -442,6 +573,7 @@ svg {
   text-align: center;
   font-size: 1.5rem;
   margin: 7% 0;
+  color: #e0fbfc;
 }
 
 .laatikot-container {
@@ -451,15 +583,21 @@ svg {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .kortti {
-  flex-shrink: 0;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 0 .4rem .4rem rgba(0, 0, 0, 0.171);
+  /* box-shadow: 0 0 .4rem .4rem rgba(0, 0, 0, 0.171); */
   transition: .42s ease-in;
+  background-color: #3d5a80;
+  color: #e0fbfc;
+}
+
+.kortti h3 {
+  color: #e0fbfc;
+  font-size: 1.7rem;
 }
 
 .kortti:hover {
