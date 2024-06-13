@@ -1,9 +1,15 @@
+const sidebar = document.querySelector('.sidebar');
 
-function showSidebar(){
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.transform =  "translate(-250px)";
-  }
-  function hideSidebar(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.transform =  "translate(250px)";
-  }
+function showSidebar() {
+  sidebar.style.display = "flex";
+  setTimeout(() => {
+    sidebar.style.transform = "translate(-250px)";
+  }, 10);
+
+}
+function hideSidebar() {
+  sidebar.style.transform = "translate(250px)";
+  sidebar.addEventListener('transitionend', () => {
+    sidebar.style.display = "none";
+  }, { once: true });
+}

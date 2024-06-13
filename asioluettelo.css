@@ -46,7 +46,7 @@ body {
   transition: .15s ease-in;
   color: hsl(0, 0%, 57%);
   text-decoration: none;
-  font-size: 0.8rem; 
+  font-size: 0.8rem;
 }
 
 .navigation a:hover {
@@ -70,18 +70,21 @@ body {
 .hampurilais-valikko {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
-.hampurilais-valikko ul{
+
+.hampurilais-valikko ul {
   width: 100%;
   list-style: none;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.hampurilais-valikko li{
+
+.hampurilais-valikko li {
   height: 50px;
   color: #293241;
 }
-.hampurilais-valikko a{
+
+.hampurilais-valikko a {
   height: 100%;
   padding: 0 30px;
   text-decoration: none;
@@ -89,17 +92,19 @@ body {
   align-items: center;
   color: hsl(0, 0%, 57%);
 }
-.sidebar a:hover{
+
+.sidebar a:hover {
   background-color: #2c2c2c1c;
 }
-.hampurilais-valikko li:first-child{
+
+.hampurilais-valikko li:first-child {
   margin-right: auto;
 }
 
-.sidebar{
+.sidebar {
   margin-top: 0;
   position: fixed;
-  top: 0; 
+  top: 0;
   right: -107%;
   height: 100vh;
   width: 250px;
@@ -113,32 +118,39 @@ body {
   transition: all ease-in-out 1s;
 }
 
-.sidebar li{
+.sidebar li {
   width: 100%;
 }
-.sidebar a{
+
+.sidebar a {
   width: 100%;
 }
-.menu-button{
+
+.menu-button {
   display: none;
 }
-@media(max-width: 1010px){
+
+@media(max-width: 1010px) {
   .navigation {
     display: none;
   }
-  .menu-button{
+
+  .menu-button {
     display: block;
   }
+
   .header {
     position: absolute;
     justify-content: space-between;
   }
+
   .logo {
     margin-left: 6%;
   }
 }
-@media(max-width: 400px){
-  .sidebar{
+
+@media(max-width: 400px) {
+  .sidebar {
     width: 100%;
   }
 }
@@ -156,13 +168,16 @@ body {
   padding-right: 25px;
   width: 55%;
   float: left;
-  font-size: 1.3rem;
   color: #e0fbfc;
   padding-bottom: 15px;
 }
 
 *h2 {
   font-weight: bold;
+}
+
+.profiili p {
+  font-size: clamp(0.8rem, 4vw, 1.3rem);
 }
 
 /*Työkokemus*/
@@ -172,11 +187,14 @@ body {
   color: #e0fbfc;
   background-color: #ee6c4d;
 }
+
 .työkokemus h2 {
+  padding-top: 30px;
   margin-top: 40px;
   font-size: 2.5rem;
 }
-.työkokemus ul{
+
+.työkokemus ul {
   padding: 0;
 }
 
@@ -193,7 +211,7 @@ body {
   border-bottom: #e0fbfc solid 5px;
 }
 
-.työkokemus-lista:first-child{
+.työkokemus-lista:first-child {
   padding-top: 10px;
 }
 
@@ -227,7 +245,6 @@ body {
 }
 
 .portfolio-container {
-  padding: 20px;
   width: 80%;
   height: 100%;
   margin-bottom: 40px;
@@ -260,6 +277,16 @@ body {
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 48px);
   row-gap: 9px;
+}
+
+@media only screen and (max-width: 800px) {
+  .portfolio-työt {
+    padding: 20px;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
 }
 
 #projekti1 {
@@ -349,16 +376,31 @@ body {
 
 .tadotjakiinnostus-taidot {
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr 2fr;
+  grid-template-rows: repeat(1fr, 4);
   height: 80%;
   width: 80%;
   padding-bottom: 40px;
 }
 
 .kielet-ja-it-taidot-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+}
+
+@media only screen and (max-width: 600px) {
+  .kielet-ja-it-taidot-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+
+.tadotjakiinnostus-kielet {
+  grid-column: 2;
+}
+
+.tadotjakiinnostus-it-taidot {
+  grid-column: 4;
 }
 
 .tadotjakiinnostus-it-taidot,
@@ -366,21 +408,17 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 14px;
+  margin-bottom: 50px;
 }
 
 /*tadotjakiinnostus-progressbar*/
 
 .skill-container {
   position: relative;
-  min-width: 500px;
+  max-width: 500px;
+  width: clamp(200px, 8vw, 500px);
   width: 100%;
   z-index: 1;
-}
-
-@media only screen and (max-width: 600px) {
-  .skill-container {
-    min-width: 300px;
-  }
 }
 
 .skill-container .skill-box {
@@ -532,21 +570,21 @@ circle {
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
-  .skill[data-target="42"] circle {
+  .skill[data-target="45"] circle {
     animation: anim42 .7s ease-in-out forwards;
     animation-delay: 0.3s;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
-  .skill[data-target="46"] circle {
+  .skill[data-target="42"] circle {
     animation: anim46 .7s ease-in-out forwards;
     animation-delay: 0.5s;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
-  .skill[data-target="22"] circle {
+  .skill[data-target="15"] circle {
     animation: anim22 .7s ease-in-out forwards;
     animation-delay: 0.7s;
   }
@@ -635,4 +673,43 @@ svg {
 
 .kortti-kuva {
   margin-bottom: 2rem;
+}
+
+/* footteri */
+
+footer {
+  background-color: #293241;
+  margin-top: 7rem;
+  height: 30vh;
+  color: #e0fbfc;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.footer-container {
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  place-items: center;
+}
+
+.yhteystideo-container {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 15px;
+}
+
+.sosial-container {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+}
+
+.footerpohja {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }

@@ -14,34 +14,35 @@
         <a class="logo" href="#home">Toni Eskola</a>
 
         <nav class="navigation">
-            <a href="#home">Profiili</a>
-            <a href="#news">Työkokemus</a>
-            <a href="#contact">Portfolio</a>
-            <a href="#about">Tutkinnot</a>
-            <a class="taidot-ja-kiinnostukset" href="#news">Taidot ja kiinnostuksenkohteet</a>
-            <a class="Harrastukset" href="#contact">Harrastukset</a>
-            <a class="contact" href="#about">Yhteystiedot</a>
+            <a class="navbutton" href="#section1">Profiili</a>
+            <a class="navbutton" href="#section2">Työkokemus</a>
+            <a class="navbutton" href="#section3">Portfolio</a>
+            <a class="navbutton" href="#section4">Tutkinnot</a>
+            <a class="navbutton" class="taidot-ja-kiinnostukset" href="#section5">Taidot ja
+                kiinnostuksenkohteet</a>
+            <a class="navbutton" class="Harrastukset" href="#section6">Harrastukset</a>
+            <a class="navbutton" class="contact" href="#section7">Yhteystiedot</a>
         </nav>
         <div class="hampurilais-valikko">
             <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
-            <ul class="sidebar" style="display: flex;">
+            <ul class="sidebar" style=" display: none">
                 <li onclick="hideSidebar()"><a href="#"><i style="cursor: pointer;" class="fa-solid fa-xmark"></i></a>
                 </li>
-                <li><a href="#home">Profiili</a></li>
-                <li><a href="#news">Työkokemus</a></li>
-                <li><a href="#contact">Portfolio</a></li>
-                <li><a href="#about">Tutkinnot</a></li>
-                <li><a href="#news">Taidot ja kiinnostuksenkohteet</a></li>
-                <li><a href="#contact">Harrastukset</a></li>
-                <li><a class="contact" href="#about">Yhteystiedot</a></li>
+                <li><a class="navbutton" href="#section1">Profiili</a></li>
+                <li><a class="navbutton" href="#section2">Työkokemus</a></li>
+                <li><a class="navbutton" href="#section3">Portfolio</a></li>
+                <li><a class="navbutton" href="#section4">Tutkinnot</a></li>
+                <li><a class="navbutton" href="#section5">Taidot ja kiinnostuksenkohteet</a></li>
+                <li><a class="navbutton" href="#section6">Harrastukset</a></li>
+                <li><a class="navbutton" class="contact" href="#section7">Yhteystiedot</a></li>
             </ul>
-
         </div>
     </header>
+
 </head>
 
 <body>
-    <div class="profiili-container">
+    <div id="section1" class="profiili-container">
         <div class="profiili">
             <h2>Profiili</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -55,7 +56,7 @@
         </div>
     </div>
 
-    <div class="työkokemus-portfolio-container">
+    <div id="section2" class="työkokemus-portfolio-container">
         <div class="työkokemus">
             <h2 style="text-align: center;">Työkokemus</h2>
             <div class="työkokemus-lista-container">
@@ -101,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio-section">
+        <div id="section3" class="portfolio-section">
             <div class="portfolio-container">
                 <h2 style="text-align: center;">Portfolio</h2>
                 <div class="portfolio-työt"></div>
@@ -110,7 +111,7 @@
     </div>
 
 
-    <div class="tutkinnot-container">
+    <div id="section4" class="tutkinnot-container">
         <div class="tutkinnot-container-otsikko">
             <h2>Tutkinnot</h2>
         </div>
@@ -123,7 +124,7 @@
         </div>
 
     </div>
-    <div class="tadotjakiinnostus">
+    <div id="section5" class="tadotjakiinnostus">
         <h2>Taidot ja kiinnostuksenkohteet</h2>
         <div class="tadotjakiinnostus-taidot">
             <h4>Kielet ja it-taidot</h4>
@@ -230,7 +231,7 @@
 
                 <div>
                     <h5>Html</h5>
-                    <div class="skill" data-target="42">
+                    <div class="skill" data-target="45">
                         <div class="outer">
                             <div class="inner">
                                 <div class="number"></div>
@@ -244,7 +245,7 @@
 
                 <div>
                     <h5>Css</h5>
-                    <div class="skill" data-target="46">
+                    <div class="skill" data-target="42">
                         <div class="outer">
                             <div class="inner">
                                 <div class="number"></div>
@@ -258,7 +259,7 @@
 
                 <div>
                     <h5>Java</h5>
-                    <div class="skill" data-target="22">
+                    <div class="skill" data-target="15">
                         <div class="outer">
                             <div class="inner">
                                 <div class="number"></div>
@@ -272,16 +273,38 @@
             </div>
         </div>
     </div>
-    <div class="harrastukset">
+    <div id="section6" class="harrastukset">
         <h4>kiinnostuksenkohteet</h4>
         <div class="laatikot-container">
         </div>
     </div>
+    <footer id="section7" class="footer">
+        <div class="footer-container">
+            <h3>Ota yhteyttä</h3>
+            <div class="yhteystideo-container">
+                <a style="text-decoration: none; color: #e0fbfc;" href="mailto: toni.eskola992@gmail.com">Sähköpostitse:
+                    toni.eskola992@gmail.com</a>
+                <a style="text-decoration: none; color: #e0fbfc;" href=tel: +358403649393>puhelimitse: 0403649393</a>
+                <div class="sosial-container">
+                    <a href="https://www.facebook.com/toni.eskola.1232?locale=fi_FI"><i style="color: #e0fbfc"
+                            class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/toni-eskola-b6270830a/"><i style="color: #e0fbfc"
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/ToniEskola2004"><i style="color: #e0fbfc" class="fa-brands fa-github"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="footerpohja">
+            <p>©2024 All rights reserved</p>
+        </div>
+    </footer>
     <script src="js/sidebar.js"></script>
     <script src="js/progressbar-counter.js"></script>
     <script src="js/animate.js"></script>
     <script src="js/kiinnostuksen-kohteet.js"></script>
     <script src="js/portfolio_työt.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>
