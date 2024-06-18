@@ -33,7 +33,7 @@ const laatikot = [
         kiinnostuksenKohde: "Tietokoneet",
         image: "../kuvat/",
         imageAlt: "tietokone",
-        tietoa: "Tietokoneet ovat olleet jo pitkään intohimonani ja olen niitä muutaman rakentanut. Tällä hetkellä minulla on ryzen 7 5700x, 16gb ramia, samsung 980 pro 1tb ja rtx 3070. Myös kaikki tekniikka aiheinen kiinnostaa valtavasti."
+        tietoa: "Tietokoneet ovat olleet jo pitkään intohimonani ja olen niitä muutaman rakentanut. Tällä hetkellä minulla on ryzen 7 5700x, 16gb ramia, samsung 980 pro 1tb ja rtx 3070. Myös kaikki elektroniikka ja tekniikka aiheinen kiinnostaa valtavasti."
     }
 ];
 
