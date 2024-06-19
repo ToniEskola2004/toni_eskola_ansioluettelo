@@ -567,54 +567,53 @@ circle {
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
-  .skill[data-target="38"] circle {
-    animation: anim38 .7s ease-in-out forwards;
-    animation-delay: 0.1s;
-  }
-}
-
-.tadotjakiinnostus-ohjelmoitikielet.in-view {
-  .skill[data-target="45"] circle {
-    animation: anim42 .7s ease-in-out forwards;
-    animation-delay: 0.3s;
+  .skill[data-target="35"] circle {
+    animation: anim35 .7s ease-in-out forwards;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
   .skill[data-target="42"] circle {
-    animation: anim46 .7s ease-in-out forwards;
-    animation-delay: 0.5s;
+    animation: anim42 .7s ease-in-out forwards;
+    animation-delay: 0.2s;
+  }
+}
+
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="40"] circle {
+    animation: anim40 .7s ease-in-out forwards;
+    animation-delay: 0.4s;
   }
 }
 
 .tadotjakiinnostus-ohjelmoitikielet.in-view {
   .skill[data-target="15"] circle {
-    animation: anim22 .7s ease-in-out forwards;
-    animation-delay: 0.7s;
+    animation: anim15 .7s ease-in-out forwards;
+    animation-delay: 0.6s;
   }
 }
 
-@keyframes anim38 {
+@keyframes anim35 {
   to {
-    stroke-dashoffset: 292;
+    stroke-dashoffset: 306.8;
   }
 }
 
 @keyframes anim42 {
   to {
-    stroke-dashoffset: 273;
+    stroke-dashoffset: 273.7;
   }
 }
 
-@keyframes anim46 {
+@keyframes anim40 {
   to {
-    stroke-dashoffset: 264;
+    stroke-dashoffset: 283.2;
   }
 }
 
-@keyframes anim22 {
+@keyframes anim15 {
   to {
-    stroke-dashoffset: 368;
+    stroke-dashoffset: 401.2;
   }
 }
 
