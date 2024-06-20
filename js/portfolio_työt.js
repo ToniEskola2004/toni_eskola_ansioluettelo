@@ -16,7 +16,7 @@ const laatikot1 = [
     {
         id: "projekti3",
         projekti: "Labyrinttipeli",        
-        tietoa: "Tämä projekti on tehty lähinnä javascriptiä käyttäen. Se hyödyntää DfS-algorytmiä, mikä louhii halutun kokoisen labyrintin.",
+        tietoa: "Tämä projekti on tehty lähinnä javascriptiä käyttäen. Se hyödyntää DfS-algorytmiä, mikä louhii halutun kokoisen labyrintin. (kesken)",
         linkki: "labyrintti_peli/index.html",
         linkkiTeksti: "Labyrinttipeli"
     },
