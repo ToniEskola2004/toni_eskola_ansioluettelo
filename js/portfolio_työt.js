@@ -3,22 +3,22 @@ const laatikot1 = [
         id: "projekti1",
         projekti: "Noppapeli",
         tietoa: "Ensimmäinen tekemäni ohjelma mikä hyödyntää javascriptiä. Sekoittaa ja piirtää viisi noppaa. hyödynnetty myös html ja css.",
-        linkki: "https://sisustus.luksia.fi.zoner.dev/",
-        linkkiTeksti: "Noppapeli github"
+        linkki: "Noppien_pyörittäjä/index.html",
+        linkkiTeksti: "Noppageneraattori"
     },
     {
         id: "projekti2",
         projekti: "Ristinolla",
         tietoa: "Tekemäni peli mikä käyttää pääosin javascriptiä. Todella mielenkiintoinen projekti, sillä tämä on kokonaan minun kirjoittama koodi ja se onkin siksi uniikki ratkaisu tehdä ristinolla peli.",
-        linkki: "https://sisustus.luksia.fi.zoner.dev/",
-        linkkiTeksti: "Ristinolla github"
+        linkki: "ristinolla/index.html",
+        linkkiTeksti: "Ristinolla peli"
     },
     {
         id: "projekti3",
         projekti: "Labyrinttipeli",        
         tietoa: "Tämä projekti on tehty lähinnä javascriptiä käyttäen. Se hyödyntää DfS-algorytmiä, mikä louhii halutun kokoisen labyrintin.",
-        linkki: "https://sisustus.luksia.fi.zoner.dev/",
-        linkkiTeksti: "Labyrinttipeli github"
+        linkki: "labyrintti_peli/index.html",
+        linkkiTeksti: "Labyrinttipeli"
     },
     {
         id: "projekti4",

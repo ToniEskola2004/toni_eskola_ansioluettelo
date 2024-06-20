@@ -45,7 +45,7 @@ const postMethods = () => {
         postElement.classList.add('kortti');
         postElement.innerHTML = `
         <h3 class="kortti-otsikko">${postData.kiinnostuksenKohde}</h3>
-        <img src="${postData.image}" alt="${postData.imageAlt}" class="kortti-kuva">
+        <!--<img src="${postData.image}" alt="${postData.imageAlt}" class="kortti-kuva">-->
         <p class="kortti-teksti">${postData.tietoa}</p>`
 
         postContainer.appendChild(postElement);
