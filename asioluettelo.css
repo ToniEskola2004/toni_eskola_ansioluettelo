@@ -238,7 +238,7 @@ body {
   clear: both;
   display: flex;
   place-content: center;
-  min-height: 100%;
+  min-height: 1300px;
   overflow: hidden;
   background-color: #293241;
   color: #e0fbfc;
@@ -247,7 +247,7 @@ body {
 .portfolio-container {
   width: 80%;
   height: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .portfolio-container h2 {
@@ -269,7 +269,7 @@ body {
 }
 
 .projekti-teksti {
-  font-size: clamp(1rem, 1.1vw, 1.5rem);
+  font-size: clamp(1rem, 1.1vw, 2rem);
 }
 
 .projekti-button {
@@ -280,7 +280,7 @@ body {
   display: inline-grid;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 52px);
-  row-gap: 9px;
+  row-gap: 15px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -300,18 +300,18 @@ body {
 
 #projekti2 {
   grid-column: 12 / 19;
-  grid-row: 4 / 8;
+  grid-row: 4 / 9;
 }
 
 #projekti3 {
   grid-column: 11 / 18;
-  grid-row: 15 / 20;
+  grid-row: 16 / 20;
   margin-top: 12px;
 }
 
 #projekti4 {
   grid-column: 9 / 20;
-  grid-row: 9 / 14;
+  grid-row: 10 / 15;
 }
 
 #projekti5 {
@@ -349,17 +349,24 @@ body {
   align-items: center;
 }
 
-.tutkinnot-container-lista {
-  line-height: 6rem;
+.tutkinnot {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 }
 
-.tutkinnot-container-lista li {
+.tutkinnot div {
+  padding: 4rem 0;
+  text-align: center;
+  width: 60%;
+}
+
+.peruskoulu {
+  line-height: 2.5rem;
+}
+
+.tutkinnot-container-lista div {
   list-style-type: none;
-}
-
-.tutkinnot-container-lista li:nth-child(2),
-.tutkinnot-container-lista li:nth-child(1) {
-  border-bottom: hsl(0, 0%, 13%) solid 3px;
 }
 
 /*tadotjakiinnostus*/
@@ -666,7 +673,7 @@ svg {
 }
 
 .kortti:hover {
-  transform: translateY(-17px);
+  transform: translateY(-10px);
 }
 
 .kortti-otsikko {
@@ -677,6 +684,9 @@ svg {
   margin-bottom: 2rem;
 }
 
+.kortti-teksti {
+  text-transform: none;
+}
 /* footteri */
 
 footer {
