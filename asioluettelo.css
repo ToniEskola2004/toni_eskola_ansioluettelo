@@ -169,7 +169,8 @@ body {
   width: 55%;
   float: left;
   color: #e0fbfc;
-  padding-bottom: 15px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 *h2 {
@@ -201,7 +202,7 @@ body {
 .työkokemus-portfolio-container {
   clear: both;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   height: 70%;
 }
 
@@ -290,6 +291,10 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+  }
+
+  .projektit {
+    padding-bottom: 40px;
   }
 }
 
@@ -687,37 +692,65 @@ svg {
 .kortti-teksti {
   text-transform: none;
 }
+
 /* footteri */
 
 footer {
+  background-color: #293241;
   margin-top: 7rem;
   height: 30vh;
   color: #e0fbfc;
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 8fr 1fr;
+  padding-top: 40px;
+}
+
+.footer-box {
+  padding: 40px;
+  display: flex;
+  place-content: center;
+  background-color: #293241;
+  font-size: 1.9rem;
 }
 
 .footer-container {
-  background-color: #293241;
-  font-size: 1.2rem;
   display: grid;
-  grid-template-rows: 1fr 3fr;
-  place-items: center;
+  width: 60%;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: max-content;
+}
+
+@media(max-width: 1400px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-items: center;
+    align-items: center;
+  }
+  .form-container {
+    margin-bottom: 30px;
+  }
+}
+
+.footer-yhteystiedot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .yhteystideo-container {
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: max-content;
   row-gap: 15px;
 }
 
 .sosial-container {
+  margin-top: 12px;
   font-size: 1.5rem;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   column-gap: 15px;
 }
 
@@ -726,4 +759,100 @@ footer {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+.fa-phone,
+.fa-envelope {
+  margin-right: 7px;
+}
+
+/* contact form */
+
+.dark .text,
+.dark .textarea {
+  background: transparent;
+  width: 100%;
+  border: #e0fbfc solid 3px;
+  color: #e0fbfc;
+  border-radius: 13px;
+  padding: 10px;
+  font-size: 1rem;
+  outline: 0;
+  margin-bottom: 30px;
+  cursor: text;
+}
+
+.form-field {
+  position: relative;
+}
+
+label {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: #e0fbfc;
+  transition: ease-in 0.2s;
+  cursor: text;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  min-width: 600px;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label {
+  top: -32px;
+  font-size: 0.7rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row .form-field {
+  flex-basis: 46%;
+}
+
+@media(max-width: 744px) {
+  .row {
+    display: block;
+    justify-content: stretch;
+  }
+  .contact-form {
+    min-width: 80%;
+  }
+  .sosial-container {
+    justify-content: center;
+    text-align: center;
+  }
+  .yhteystideo-container, 
+  .btn-submit,
+  .footer-box {
+    font-size: clamp(0.5rem, 5vw, 1rem);
+  }
+}
+
+.btn-submit {
+  border: none;
+  background-color: #ee6c4d;
+  padding: 10px 15px;
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.dark .btn-submit:hover,
+.dark .btn-submit:focus {
+  background-color: hsl(12, 83%, 67%);
 }
