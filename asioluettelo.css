@@ -5,6 +5,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #e0fbfc;
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
 }
 
 /* HEADERI */
@@ -710,7 +711,7 @@ footer {
   display: flex;
   place-content: center;
   background-color: #293241;
-  font-size: 1.9rem;
+  font-size: 1.2rem;
 }
 
 .footer-container {
@@ -841,6 +842,9 @@ textarea:valid~label {
   .btn-submit,
   .footer-box {
     font-size: clamp(0.5rem, 5vw, 1rem);
+  }
+  .form-container {
+    flex-direction: column;
   }
 }
 
