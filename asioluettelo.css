@@ -728,6 +728,7 @@ footer {
     justify-items: center;
     align-items: center;
   }
+
   .form-container {
     margin-bottom: 30px;
   }
@@ -831,18 +832,22 @@ textarea:valid~label {
     display: block;
     justify-content: stretch;
   }
+
   .contact-form {
     min-width: 80%;
   }
+
   .sosial-container {
     justify-content: center;
     text-align: center;
   }
-  .yhteystideo-container, 
+
+  .yhteystideo-container,
   .btn-submit,
   .footer-box {
     font-size: clamp(0.5rem, 5vw, 1rem);
   }
+
   .form-container {
     flex-direction: column;
   }
@@ -856,6 +861,7 @@ textarea:valid~label {
   cursor: pointer;
   font-size: 1.2rem;
 }
+
 .dark .btn-submit:hover,
 .dark .btn-submit:focus {
   background-color: hsl(12, 83%, 67%);
