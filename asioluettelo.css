@@ -866,3 +866,15 @@ textarea:valid~label {
 .dark .btn-submit:focus {
   background-color: hsl(12, 83%, 67%);
 }
+
+#status-messages {
+  margin-top: 0.7rem;
+  padding: 1rem;
+  color: #e0fbfc;
+}
+#status-messages.error {
+  background-color: red;
+}
+#status-messages.súccess {
+  background-color: green;
+}
