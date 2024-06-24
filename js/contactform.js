@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    var $root = $('html, body');
+    // var $root = $('html, body');
 
     $(".contact-form").submit(function (event) {
         // Stop form from submitting normally
