@@ -3,7 +3,7 @@
 $sendto = 'toni.eskola992@gmail.com';
 $subject = 'Uusi viesti';
 
-if (!empty($_POST)) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Whitelist
     $name = $_POST['name'];
     $from = $_POST['email'];
@@ -38,9 +38,6 @@ if (!empty($_POST)) {
         echo json_encode(array('status' => 1, 'message' => 'Viesti lähetetty onnistuneesti'));
         die();
     }
-
     echo json_encode(array('status' => 0, 'message' => 'Lähetys ei onnistunut. Yritä uudelleen'));
-} else {
-    echo 'No data';
 }
 ?>

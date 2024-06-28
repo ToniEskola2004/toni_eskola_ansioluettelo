@@ -872,9 +872,11 @@ textarea:valid~label {
   padding: 1rem;
   color: #e0fbfc;
 }
+
 #status-messages.error {
   background-color: red;
 }
+
 #status-messages.súccess {
   background-color: green;
 }
