@@ -210,7 +210,7 @@ body {
 .työkokemus-lista {
   padding: 25px 30px;
   padding-left: 45px;
-  border-bottom: #e0fbfc solid 5px;
+  border-bottom: #e0fbfc solid 1px;
 }
 
 .työkokemus-lista:first-child {
