@@ -7,14 +7,14 @@ let scoreval2 = 0;
 let turn = "x";
 let boardstatus = ["", "", "", "", "", "", "", "", ""];
 let gameRunning = true;
-const winConditions = [ [0, 1, 2], 
-                        [3, 4, 5],
-                        [6, 7, 8],
-                        [0, 3, 6],
-                        [1, 4, 7],
-                        [2, 5, 8],
-                        [0, 4, 8],
-                        [2, 4, 6] ];
+const winConditions = [[0, 1, 2],
+[3, 4, 5],
+[6, 7, 8],
+[0, 3, 6],
+[1, 4, 7],
+[2, 5, 8],
+[0, 4, 8],
+[2, 4, 6]];
 
 cells.forEach((cell) => cell.addEventListener("click", cellClicked));
 function changeTurn() {
@@ -24,7 +24,7 @@ function changeTurn() {
     else {
         turn = "x";
     }
-} 
+}
 function uppdateBoard() {
     score1.textContent = `X = ${scoreval1}`;
     score2.textContent = `O = ${scoreval2}`;
@@ -38,18 +38,17 @@ function reset() {
     gameRunning = true;
 }
 function checkWinner() {
-    for(i = 0; i < winConditions.length; i++) {
-        let int = winConditions[i];
-        const [var1, var2, var3] = int;
+    for (i = 0; i < winConditions.length; i++) {
+        let row = winConditions[i];
+        const [var1, var2, var3] = row;
         const contains = [boardstatus[var1], boardstatus[var2], boardstatus[var3]].every(elem => elem === turn);
 
         if (contains) {
             gameRunning = false;
             if (turn === "x") {
-            scoreval1++;
-            }
-            else if (turn === "o") {
-            scoreval2++;
+                scoreval1++;
+            } else {
+                scoreval2++;
             }
         }
     }
@@ -57,14 +56,14 @@ function checkWinner() {
 function cellClicked(event) {
     const cell = event.target;
     if (cell.innerText === "" && gameRunning) {
-            const cellIndex = cell.dataset.index;
-            cell.textContent = turn;
-            boardstatus[cellIndex] = turn;
-            checkWinner();
-            changeTurn();
+        const cellIndex = cell.dataset.index;
+        cell.textContent = turn;
+        boardstatus[cellIndex] = turn;
+        checkWinner();
+        changeTurn();
     }
 }
-function restart() { 
+function restart() {
     gameRunning = true;
     uppdateBoard()
 }

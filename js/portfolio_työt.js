@@ -33,6 +33,13 @@ const laatikot1 = [
         tietoa: "Tämä tehtiin myös koulussa ryhmätyönä. sivusto on tehty wordpressillä muutama toiminnallisuus javascriptillä ja hieman css:sää. Sivusto on Seo-optimoitu se skaalautuu mobiilille. Se on vielä puutteellinen.",
         linkki: "https://sisustus.luksia.fi.zoner.dev/",
         linkkiTeksti: "qpinterior oy:n nettisivut"
+    },
+    {
+        id: "projekti6",
+        projekti: "javascript raketti",
+        tietoa: "Tämä työ oli koulu tehtävä. Tehtävänä oli tehdä javascriptillä raketti, joka lähtee lentoon lähtölaskennan kautta ja tietyllä todennäköisyydellä laukaisu voi epäonnistua tai onnistua ja raketin tiloista kirjaantuu teksti näytölle.",
+        linkki: "https://tonieskola2004.github.io/jsrocket/",
+        linkkiTeksti: "linnki rakettiin"
     }
 ];
 

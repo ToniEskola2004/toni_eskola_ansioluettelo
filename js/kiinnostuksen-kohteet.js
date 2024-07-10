@@ -21,7 +21,7 @@ const laatikot = [
         kiinnostuksenKohde: "Vapaa-ajalla urheilu",
         image: "../kuvat/",
         imageAlt: "urheilu",
-        tietoa: "Käyn aina silloin tällöin urheilemassa vapaa-ajalla. Muunmuassa lenkkeilyä, taekwondoa, pyöräilyä mitä nyt ikinä keksinkään."
+        tietoa: "Käyn aina silloin tällöin urheilemassa vapaa-ajalla. Muunmuassa lenkkeilyä, taekwondoa, frisbeegolfia ja pyöräilyä mitä nyt ikinä keksinkään."
     },
     {
         kiinnostuksenKohde: "Koodaus",

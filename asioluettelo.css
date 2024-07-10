@@ -210,7 +210,7 @@ body {
 .työkokemus-lista {
   padding: 25px 30px;
   padding-left: 45px;
-  border-bottom: #e0fbfc solid 5px;
+  border-bottom: #e0fbfc solid 1px;
 }
 
 .työkokemus-lista:first-child {
@@ -325,6 +325,11 @@ body {
   grid-row: 9 / 19;
 }
 
+#projekti6 {
+  grid-column: 4 / 16;
+  grid-row: 21 / 22;
+}
+
 #projekti2 .projekti-otsikko {
   margin-bottom: 0;
 }
@@ -378,10 +383,17 @@ body {
 /*tadotjakiinnostus*/
 .tadotjakiinnostus {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #293241;
+}
+
+.taidot-wrapper {
+  width: 75%;
+  display: flex;
   flex-direction: column;
   place-items: center;
   min-height: 800px;
-  background-color: #293241;
   color: #e0fbfc;
   padding: 4rem 0;
 }

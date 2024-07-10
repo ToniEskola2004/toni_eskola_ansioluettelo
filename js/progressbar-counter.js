@@ -5,11 +5,13 @@ function initializeProgressBar(skillElement) {
   let counter = 0;
 
   function updateCounter() {
-    if (counter <= targetPercentage) {
-      number.innerHTML = counter + "%";
-      counter += 1;
-      requestAnimationFrame(updateCounter);
-    }
+    setInterval(function () {
+      if (counter <= targetPercentage) {
+        number.innerHTML = counter + "%";
+        counter += 1;
+        requestAnimationFrame(updateCounter);
+      }
+    }, 50);
   }
   requestAnimationFrame(updateCounter);
 }
