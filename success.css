@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #00f7ff;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+}
+.lähetys_container {
+    margin: 20%;
+}
