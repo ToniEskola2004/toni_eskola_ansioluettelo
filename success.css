@@ -2,9 +2,22 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #00f7ff;
+    background-color: #e0fbfc;
     font-size: clamp(0.8rem, 3vw, 1.2rem);
 }
 .lähetys_container {
-    margin: 20%;
+    margin: 5%;
+}
+.lähetus_box {
+    margin-bottom: 40px;
+}
+.back_btn {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 2px;
+}
+.back_btn:hover {
+    color: hsl(0, 0%, 25%);
+    border-bottom: 2px solid hsl(0, 0%, 25%);
 }
