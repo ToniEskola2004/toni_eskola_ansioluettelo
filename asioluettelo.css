@@ -673,7 +673,7 @@ svg {
   margin: auto;
   display: grid;
   place-content: center;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 500px));
   gap: 3.5rem;
 }
 
