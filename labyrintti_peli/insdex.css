@@ -1,12 +1,13 @@
 body {
+    background-color: hsl(0, 0%, 15%);
     margin: 0;
     font-family: sans-serif;
     text-align: center;
     justify-content: center;
 }
 canvas {
-    border-radius: 15px;
     margin: auto;
+    border-radius: 10px;
 }
 #selection, #startbutton {
     color: white;

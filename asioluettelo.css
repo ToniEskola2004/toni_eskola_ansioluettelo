@@ -158,8 +158,28 @@ body {
 
 /*Profiili*/
 
+.profiili-omakuva-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.omakuva {
+  max-width: 20%;
+  height: auto;
+  margin: 0;
+  padding-left: 7%;
+}
+
+@media(max-width: 1500px) {
+  .omakuva {
+    max-width: clamp(150px, 20vw, 400px);
+    height: auto;
+  }
+}
+
 .profiili-container {
-  margin-top: 140px;
+  margin: 0;
+  padding: 0;
   clear: both;
 }
 

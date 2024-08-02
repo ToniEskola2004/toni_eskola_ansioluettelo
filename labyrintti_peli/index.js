@@ -1,73 +1,172 @@
 const gameBoard = document.getElementById("gameCanvas");
-const mazeDif = [8, 12, 18, 24];
+const mazeDif = [10, 24, 50, 100];
 const gameWidth = 800;
 const gameHeight = 800;
 let maze = [];
 const ctx = gameBoard.getContext("2d");
 var e = document.getElementById("selection");
-var x = 0, y = 0;
+let cellIndex = 0;
+let prizeX = 0;
+let prizeY = 0;
 
-//generate full maze memory
+// Initialization: Create a maze memory and mark all vertices as not visited.
 
-function generateLabyrint() {
+function Initialization() {
+  const startingPoints = [[0, 0], [0, mazeDif[e.value] - 1], [mazeDif[e.value] - 1, 0], [mazeDif[e.value] - 1, mazeDif[e.value] - 1]];
+  let randomPoint = Math.floor(Math.random() * 4);
+  var row = startingPoints[randomPoint][0];
+  var col = startingPoints[randomPoint][1];
+  var playerX = row;
+  var playerY = col;
 
-    for (i = 0; i < mazeDif[e.value]; i++) {
-        maze[i] = [];
-            for (j = 0; j < mazeDif[e.value]; j++) {
-                maze[i][j] = [false, false, 0];            
-            }
+  for (i = 0; i < mazeDif[e.value]; i++) {
+    maze[i] = [];
+    for (j = 0; j < mazeDif[e.value]; j++) {
+      maze[i][j] = [true, true, true, true, false, cellIndex];
     }
-    //start
-    maze[0][0][4] = 2;
-    maze[mazeDif[e.value] - 1][mazeDif[e.value] - 1][4] = 3;
-    drawLabyrinth();
+  }
+  gameInitialization(playerX, playerY);
+  dfs(row, col);
 }
 
-while (maze.length) {
-    function randomSquare() {
-    directions = [[1, 0], [0, 1], [-1, 0], [0, -1]];
-    const randnum = Math.floor(Math.random() * 4)
-    let x = x + directions[randnum][0];
-    let y = y + directions[randnum][1];
+function randomDirection(row, col) {
+  var dRow = [0, 0, 1, -1];
+  var dCol = [1, -1, 0, 0];  // right, Left, bottom, Top
+  var wallPrev = [0, 2, 1, 3]; // Walls order
+  var wallNew = [2, 0, 3, 1];  // Opposite walls
 
-    if (x < 0 && x > mazeDif[e.value] && y < 0 && y > mazeDif[e.value] && maze[x][y][2] > 0) {randomSquare()}
+  var randommax = 4;
+
+  while (randommax > 0) {
+    let randomnum = Math.floor(Math.random() * randommax);
+
+    let newRow = row + dRow[randomnum];
+    let newCol = col + dCol[randomnum];
+
+    // Check if the new cell is valid and not visited
+    if (newRow >= 0 && newCol >= 0 && newRow < mazeDif[e.value] && newCol < mazeDif[e.value] && maze[newRow][newCol][4] === false) {
+      // Remove walls between the current and new cell
+      maze[row][col][wallPrev[randomnum]] = false;
+      maze[newRow][newCol][wallNew[randomnum]] = false;
+      return { result: true, directions: { row: newRow, col: newCol } };
+    } else {
+      dRow.splice(randomnum, 1);
+      dCol.splice(randomnum, 1);
+      wallPrev.splice(randomnum, 1);
+      wallNew.splice(randomnum, 1);
+      randommax--;
     }
-    console.log(x, y);
-    const visited = maze[x][y][2];
-    const vertex = stack.pop();
+  }
+  return false;
+}
 
-    if (!visited.has(0)) {
-      visited.add(vertex);
-      result.push(vertex);
 
-      for (const neighbor of graph[vertex]) {
-        stack.push(neighbor);
+function dfs(row, col) {
+  // Visit the vertex: Mark the current vertex as visited and push it onto the stack.
+  var stack = [];
+  var result = [];
+  console.log(cellIndex);
+
+  maze[row][col][4] = true;
+  result.push([row, col]);
+  stack.push([row, col]);
+  maze[row][col][5] = cellIndex++;
+
+  while (stack.length != 0) {
+
+    //mark the current cell with current cordinates
+    var current = stack[stack.length - 1];
+    stack.pop();
+    row = current[0];
+    col = current[1];
+
+    let newDirection = randomDirection(row, col);
+
+    if (newDirection === false) {
+      // console.log("backtrack");
+
+      while (newDirection === false) {
+        if (result.length < 2) {
+          // If there are no more cells to backtrack to, break out of the loop
+          break;
         }
+        var last = result[result.length - 2];
+        result.pop();
+
+        var row = last[0];
+        var col = last[1];
+
+        newDirection = randomDirection(row, col);
+        // console.log("backtrack loop ideration " + row + ", " + col);
+
+        if (newDirection) {
+          // console.log("backtrack success " + row + ", " + col);
+          break;
+        }
+      }
     }
+    // if new cell can be visited, push it to the stack and result and mark it visited
+    if (newDirection) {
+      row = newDirection.directions.row;
+      col = newDirection.directions.col;
+      console.log(cellIndex);
+
+      maze[row][col][4] = true;
+      result.push([row, col]);
+      stack.push([row, col]);
+      maze[row][col][5] = cellIndex++;
+      if (maze[row][col][5] === Math.pow(mazeDif[e.value], 2) - 1) {
+        row = prizeX;
+        col = prizeY;
+        ctx.fillText("🍌", prizeX * (gameWidth / mazeDif[e.value]) + cellCenter, prizeY * (gameHeight / mazeDif[e.value]) + cellCenter);
+      }
+
+      // console.log("dfs loop ideration " + row + ", " + col);
+    }
+  }
+  drawLabyrinth()
+  
 }
 
 // draw the labyrint
 
 function drawLabyrinth() {
-    const cellWidth = gameWidth / mazeDif[e.value];
-    const cellHeight = gameHeight / mazeDif[e.value];
+  const cellWidth = gameWidth / mazeDif[e.value];
+  const cellHeight = gameHeight / mazeDif[e.value];
 
-    ctx.clearRect(0, 0, gameWidth, gameHeight);
-    ctx.strokeStyle = 'black';
+  ctx.clearRect(0, 0, gameBoard.gameWidth, gameBoard.gameHeight);
+  ctx.strokeStyle = 'whitesmoke';
+  ctx.lineWidth = 2;
 
-    for (let i = 0; i < mazeDif[e.value]; i++) {
-        for (let j = 0; j < mazeDif[e.value]; j++) {
-            let x = i * cellWidth;
-            let y = j * cellHeight;
+  //iderate through all the cells edges
+  for (let i = 0; i < mazeDif[e.value]; i++) {
+    for (let j = 0; j < mazeDif[e.value]; j++) {
+      let x = j * cellWidth;
+      let y = i * cellHeight;
 
-            // Draw the walls based on the maze array
-            if (maze[i][j][0]) ctx.moveTo(x + cellWidth, y), ctx.lineTo(x + cellWidth, y + cellHeight); // Right
-            if (maze[i][j][1]) ctx.moveTo(x + cellWidth, y + cellHeight), ctx.lineTo(x, y + cellHeight); // Bottom
-        }
+      // Draw the walls based on the maze array
+      if (maze[i][j][0]) ctx.moveTo(x + cellWidth, y), ctx.lineTo(x + cellWidth, y + cellHeight); // Right
+      if (maze[i][j][1]) ctx.moveTo(x + cellWidth, y + cellHeight), ctx.lineTo(x, y + cellHeight); // Bottom
+      if (maze[i][j][2]) ctx.moveTo(x, y + cellHeight), ctx.lineTo(x, y); // Left
+      if (maze[i][j][3]) ctx.moveTo(x, y), ctx.lineTo(x + cellWidth, y); // Top
     }
-    ctx.stroke();
+  }
+  ctx.closePath();
+  ctx.stroke();
 }
 
-// Initialize the maze generation and drawing
-
 //player movement ability
+function gameInitialization(playerX, playerY) {
+  cellCenter = gameWidth / (mazeDif[e.value] * 2);
+  ctx.font = cellCenter + "px Arial";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("🦧", playerX * (gameWidth / mazeDif[e.value]) + cellCenter, playerY * (gameHeight / mazeDif[e.value]) + cellCenter);
+}
+
+/*lähtö piste peli hahmolle on dfs lähtöpiste joka on yksi neljästä kulmasta
+seinien läpi ei voi kulkea
+pelihahmon liike aina yksi ruutu
+lopetus piste on dfs viimeinen ruutu jonka se merkkaa
+pelin voittaa kun peli hahmo löytää aarteen
+🦧🍌*/
