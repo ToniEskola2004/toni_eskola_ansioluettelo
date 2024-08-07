@@ -23,14 +23,14 @@ const laatikot1 = [
     {
         id: "projekti4",
         projekti: "Kiinalaiselle ravintolalle nettisivut",
-        tietoa: "Työ tehtiin koulussa ryhmätyönä kolmen ryhmissä. Sivusto on tehty html, css ja javascriptiä hyödyntäen. Etusivu ja footteri ovat minun käsialaani.",
+        tietoa: "Työ tehtiin koulussa ryhmätyönä kolmen ryhmissä. Sivusto on tehty html, css ja javascriptiä hyödyntäen. Etusivu ja footteri ovat minun käsialaani. Tässäkin projektissa pyrittiin toimimaan mahdolisimman aidon ohjelmistokehittäjätiimin tavoin. Joka aamu scrum meetting. kaikesta keskuteltiin ryhmän kanssa ja projekti jaettiin kaikien tekijöiden osaamisalueille.",
         linkki: "https://dpald.github.io/nettisivu_hengfeng/etusivu/index.html",
         linkkiTeksti: "Heng feng nettisivut"
     },
     {
         id: "projekti5",
         projekti: "Suomalaiselle sisustus yrittäjälle nettisivut",
-        tietoa: "Tämä tehtiin myös koulussa ryhmätyönä. sivusto on tehty wordpressillä muutama toiminnallisuus javascriptillä ja hieman css:sää. Sivusto on Seo-optimoitu se skaalautuu mobiilille. Se on vielä puutteellinen.",
+        tietoa: "Tämä tehtiin myös koulussa ryhmätyönä. sivusto on tehty wordpressillä muutama toiminnallisuus javascriptillä ja hieman css:sää. Sivusto on Seo-optimoitu se skaalautuu mobiilille. Se on vielä puutteellinen. Projektissa pyrittiin toimimaan mahdollisimman oikea ohjemistokehittäjä tiimin tavoin. tähän kuului  Scrum-tiimi kokouksia, demoja ja projektinhallintaa. Johdin meidän tiimiämme ja järjestin tapaamiset ja kokoukset yrittäjän kanssa.",
         linkki: "https://sisustus.luksia.fi.zoner.dev/",
         linkkiTeksti: "qpinterior oy:n nettisivut"
     },
