@@ -291,7 +291,7 @@ body {
 }
 
 .projekti-teksti {
-  font-size: clamp(1rem, 1.1vw, 2rem);
+  font-size: clamp(0.9rem, 1.1vw, 2rem);
 }
 
 .projekti-button {
