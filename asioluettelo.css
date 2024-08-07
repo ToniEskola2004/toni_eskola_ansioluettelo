@@ -638,6 +638,13 @@ circle {
   }
 }
 
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="10"] circle {
+    animation: anim10 .7s ease-in-out forwards;
+    animation-delay: 0.8s;
+  }
+}
+
 @keyframes anim35 {
   to {
     stroke-dashoffset: 306.8;
@@ -659,6 +666,12 @@ circle {
 @keyframes anim15 {
   to {
     stroke-dashoffset: 401.2;
+  }
+}
+
+@keyframes anim10 {
+  to {
+    stroke-dashoffset: 424.8;
   }
 }
 
