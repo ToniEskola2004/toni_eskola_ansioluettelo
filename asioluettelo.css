@@ -346,8 +346,13 @@ body {
 }
 
 #projekti6 {
-  grid-column: 4 / 16;
+  grid-column: 8 / 16;
   grid-row: 21 / 22;
+}
+
+#projekti7 {
+  grid-column: 1 / 5;
+  grid-row: 21 / 24;
 }
 
 #projekti2 .projekti-otsikko {
@@ -635,6 +640,13 @@ circle {
   .skill[data-target="15"] circle {
     animation: anim15 .7s ease-in-out forwards;
     animation-delay: 0.6s;
+  }
+}
+
+.tadotjakiinnostus-ohjelmoitikielet.in-view {
+  .skill[data-target="10"] circle {
+    animation: anim10 .7s ease-in-out forwards;
+    animation-delay: 0.8s;
   }
 }
 

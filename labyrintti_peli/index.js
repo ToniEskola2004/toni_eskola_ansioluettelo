@@ -8,16 +8,21 @@ var e = document.getElementById("selection");
 let cellIndex = 0;
 let prizeX = 0;
 let prizeY = 0;
+let playerX = 0;
+let playerY = 0;
 
 // Initialization: Create a maze memory and mark all vertices as not visited.
 
 function Initialization() {
-  const startingPoints = [[0, 0], [0, mazeDif[e.value] - 1], [mazeDif[e.value] - 1, 0], [mazeDif[e.value] - 1, mazeDif[e.value] - 1]];
+  const PlayerstartingPoints = [[0, 0], [0, mazeDif[e.value] - 1], [mazeDif[e.value] - 1, 0], [mazeDif[e.value] - 1, mazeDif[e.value] - 1]];
+  const PrizestartingPoints = [[mazeDif[e.value] - 1, mazeDif[e.value] - 1], [mazeDif[e.value] - 1, 0], [0, mazeDif[e.value] - 1], [0, 0]];
   let randomPoint = Math.floor(Math.random() * 4);
-  var row = startingPoints[randomPoint][0];
-  var col = startingPoints[randomPoint][1];
-  var playerX = row;
-  var playerY = col;
+  prizeX = PrizestartingPoints[randomPoint][0];
+  prizeY = PrizestartingPoints[randomPoint][1];
+  var row = PlayerstartingPoints[randomPoint][0];
+  var col = PlayerstartingPoints[randomPoint][1];
+  playerX = row;
+  playerY = col;
 
   for (i = 0; i < mazeDif[e.value]; i++) {
     maze[i] = [];
@@ -62,7 +67,6 @@ function randomDirection(row, col) {
 
 
 function dfs(row, col) {
-  // Visit the vertex: Mark the current vertex as visited and push it onto the stack.
   var stack = [];
   var result = [];
   console.log(cellIndex);
@@ -115,17 +119,10 @@ function dfs(row, col) {
       result.push([row, col]);
       stack.push([row, col]);
       maze[row][col][5] = cellIndex++;
-      if (maze[row][col][5] === Math.pow(mazeDif[e.value], 2) - 1) {
-        row = prizeX;
-        col = prizeY;
-        ctx.fillText("🍌", prizeX * (gameWidth / mazeDif[e.value]) + cellCenter, prizeY * (gameHeight / mazeDif[e.value]) + cellCenter);
-      }
-
-      // console.log("dfs loop ideration " + row + ", " + col);
     }
   }
   drawLabyrinth()
-  
+
 }
 
 // draw the labyrint
@@ -154,15 +151,44 @@ function drawLabyrinth() {
   ctx.closePath();
   ctx.stroke();
 }
+function drawPlayer() {
+  ctx.fillText("🦧", playerX * (gameWidth / mazeDif[e.value]) + cellCenter, playerY * (gameHeight / mazeDif[e.value]) + cellCenter);
+}
 
 //player movement ability
 function gameInitialization(playerX, playerY) {
   cellCenter = gameWidth / (mazeDif[e.value] * 2);
-  ctx.font = cellCenter + "px Arial";
+  ctx.font = cellCenter * 1.2 + "px Arial";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillText("🦧", playerX * (gameWidth / mazeDif[e.value]) + cellCenter, playerY * (gameHeight / mazeDif[e.value]) + cellCenter);
+  ctx.fillText("🍌", prizeX * (gameWidth / mazeDif[e.value]) + cellCenter, prizeY * (gameHeight / mazeDif[e.value]) + cellCenter);
 }
+
+window.addEventListener('keydown', (event) => {
+  if (gamiIsrunning) {
+    switch (event.key) {
+      case 'w':
+        if (maze[playerX][playerY][0] == true && playerX > 0) {
+          keys.d.pressed = true;
+        }
+        break;
+
+      case 'a':
+        keys.a.pressed = true;
+        break;
+
+      case 'd':
+        if (player.position.y > 0) {
+          player.velocity.y = -10;
+        }
+        break;
+
+      case 's':
+        break;
+    }
+  }
+});
 
 /*lähtö piste peli hahmolle on dfs lähtöpiste joka on yksi neljästä kulmasta
 seinien läpi ei voi kulkea

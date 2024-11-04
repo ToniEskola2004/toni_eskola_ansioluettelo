@@ -40,6 +40,11 @@ const laatikot1 = [
         tietoa: "Tämä työ oli koulu tehtävä. Tehtävänä oli tehdä javascriptillä raketti, joka lähtee lentoon lähtölaskennan kautta ja tietyllä todennäköisyydellä laukaisu voi epäonnistua tai onnistua ja raketin tiloista kirjaantuu teksti näytölle.",
         linkki: "https://tonieskola2004.github.io/jsrocket/",
         linkkiTeksti: "linnki rakettiin"
+    },
+    {
+        id: "projekti7",
+        projekti: "Hexaly opitimointimallinnin",
+        tietoa: "Tein työn yrityksessä harjoittelijana. Siinä käytettiin matemaattista optimointi mallinninta hexalyä, lisäksi myös javascriptillä tein aputyökaluja ohjelmaan.",
     }
 ];
 
@@ -50,11 +55,10 @@ const postMethods1 = ()=>{
         const postElement1 = document.createElement('div');
         postElement1.id = postData.id;
         postElement1.classList.add('projektit');
-        postElement1.innerHTML = `
-        <h3 class="projekti-otsikko">${postData.projekti}</h3>
-        <p class="projekti-teksti">${postData.tietoa}</p>
-        <a class="projekti-button" type="button" href="${postData.linkki}">${postData.linkkiTeksti}</a>`
-
+        postElement1.innerHTML += `<h3 class="projekti-otsikko">${postData.projekti}</h3> <p class="projekti-teksti">${postData.tietoa}</p>`;
+        if (postData.linkki != null) {
+            postElement1.innerHTML += `<a class="projekti-button" type="button" href="${postData.linkki}">${postData.linkkiTeksti}</a>`
+        }
         postContainer1.appendChild(postElement1);
     });
 }

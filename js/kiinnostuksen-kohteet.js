@@ -9,7 +9,7 @@ const laatikot = [
         kiinnostuksenKohde: "Rubikinkuutiot",
         image: "../kuvat/",
         imageAlt: "rubiikinkuutio",
-        tietoa: "Olen harrastellut speed cubing:ia pienestä lähtien sillon tällöin, tauoittain. Henkilökohtainen ennätykseni 3x3 rubiikin kuutiossa 24.25sec. metodi CFOP, avg cross 5sec, f2l 9sec, oll 5sec ja pll 4sec. Main kuutio X-Man tornado v3, omistan myös MoYu RS3M:än."
+        tietoa: "Olen harrastellut speed cubing:ia pienestä lähtien sillon tällöin, tauoittain. Henkilökohtainen ennätykseni 3x3 rubiikin kuutiossa 24.25sec. metodi CFOP, avg cross 6sec, f2l 9sec, oll 5sec ja pll 4sec. Main kuutio X-Man tornado v3, omistan myös MoYu RS3M:än."
     },
     {
         kiinnostuksenKohde: "Kuntosali",
