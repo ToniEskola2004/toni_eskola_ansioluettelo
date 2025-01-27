@@ -1,10 +1,10 @@
 const laatikot1 = [
     {
         id: "projekti1",
-        projekti: "Noppapeli",
-        tietoa: "Ensimmäinen tekemäni ohjelma mikä hyödyntää javascriptiä. Sekoittaa ja piirtää viisi noppaa. hyödynnetty myös html ja css.",
-        linkki: "Noppien_pyörittäjä/index.html",
-        linkkiTeksti: "Noppageneraattori"
+        projekti: "Bootstrap-table",
+        tietoa: "Javascriptillä tehty bootstrap taulu muokkaus, poisto ja lisäys toiminnoilla. Käytetty javasctiptiä ja bootstrappiä",
+        linkki: "bootstraptable/index (2).html",
+        linkkiTeksti: "linkki pöytään"
     },
     {
         id: "projekti2",
