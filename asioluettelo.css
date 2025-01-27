@@ -260,7 +260,7 @@ body {
   clear: both;
   display: flex;
   place-content: center;
-  min-height: 1300px;
+  min-height: 1700px;
   overflow: hidden;
   background-color: #293241;
   color: #e0fbfc;
@@ -351,6 +351,16 @@ body {
 }
 
 #projekti7 {
+  grid-column: 1 / 5;
+  grid-row: 21 / 24;
+}
+
+#projekti8 {
+  grid-column: 1 / 5;
+  grid-row: 26 / 28;
+}
+
+#projekti9 {
   grid-column: 1 / 5;
   grid-row: 21 / 24;
 }
