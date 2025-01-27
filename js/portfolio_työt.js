@@ -15,7 +15,7 @@ const laatikot1 = [
     },
     {
         id: "projekti3",
-        projekti: "Labyrinttipeli",        
+        projekti: "Labyrinttipeli",
         tietoa: "Tämä projekti on tehty lähinnä javascriptiä käyttäen. Se hyödyntää DfS-algorytmiä, mikä louhii halutun kokoisen labyrintin. (kesken)",
         linkki: "labyrintti_peli/index.html",
         linkkiTeksti: "Labyrinttipeli"
@@ -45,13 +45,27 @@ const laatikot1 = [
         id: "projekti7",
         projekti: "Hexaly opitimointimallinnin",
         tietoa: "Tein työn yrityksessä harjoittelijana. Siinä käytettiin matemaattista optimointi mallinninta hexalyä, lisäksi myös javascriptillä tein aputyökaluja ohjelmaan.",
+    },
+    {
+        id: "projekti8",
+        projekti: "anagrammipeli",
+        tietoa: "Koulutehtävä. anagrammipeli tehty suurimmaksi osaksi php:tä käyttäen",
+        linkki: "https://github.com/ToniEskola2004/anagrammi_peli",
+        linkkiTeksti: "linnki githubiin"
+    },
+    {
+        id: "projekti9",
+        projekti: "hirsipuu",
+        tietoa: "Koulutehtävä tämäkin. Tethy skillshare kurssin pohjalta, mutta silti paljon itse tehtyjä osia kuten näppäimistö, tilastojen seurantaa, niiden ohjaus nappeja ja categorian vaihto nappia. Tehty lähes kokonaan php:lla",
+        linkki: "https://github.com/ToniEskola2004/hangman",
+        linkkiTeksti: "linnki githubiin"
     }
 ];
 
 const postContainer1 = document.querySelector('.portfolio-työt');
 
-const postMethods1 = ()=>{
-    laatikot1.forEach((postData)=>{
+const postMethods1 = () => {
+    laatikot1.forEach((postData) => {
         const postElement1 = document.createElement('div');
         postElement1.id = postData.id;
         postElement1.classList.add('projektit');

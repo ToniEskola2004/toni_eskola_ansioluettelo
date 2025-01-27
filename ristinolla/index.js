@@ -34,7 +34,7 @@ function uppdateBoard() {
 function reset() {
     scoreval1 = 0;
     scoreval2 = 0;
-    uppdateBoard()
+    uppdateBoard();
     gameRunning = true;
 }
 function checkWinner() {
@@ -55,7 +55,7 @@ function checkWinner() {
 }
 function cellClicked(event) {
     const cell = event.target;
-    if (cell.innerText === "" && gameRunning) {
+    if (cell.innerText == "" && gameRunning) {
         const cellIndex = cell.dataset.index;
         cell.textContent = turn;
         boardstatus[cellIndex] = turn;
@@ -65,5 +65,5 @@ function cellClicked(event) {
 }
 function restart() {
     gameRunning = true;
-    uppdateBoard()
+    uppdateBoard();
 }
